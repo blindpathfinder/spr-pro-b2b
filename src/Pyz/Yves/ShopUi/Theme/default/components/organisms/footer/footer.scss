@@ -1,151 +1,84 @@
-.footer {
-    background-color: $setting-color-gray-6;
+@mixin shop-ui-footer($name: '.footer') {
+    #{$name} {
+        border-top: rem(1) solid $setting-color-gray-3;
+        background-color: #3b5cb1;
 
-    @include helper-media-ie() {
-        overflow: hidden;
-    }
+        &__top {
+            display: flex;
+            justify-content: space-between;
+            //flex-wrap: wrap;
+            //margin: 0 rem(16);
+            padding: 15px 0 15px 0;
+            margin: 0 60px;
 
-    &__subscribe {
-        @include helper-breakpoint-media-min($md) {
-            padding-top: rem(20);
-            padding-bottom: rem(32);
         }
-
-        @include helper-breakpoint-media-min($lg) {
-            padding-top: rem(50);
-            padding-bottom: rem(50);
+        &__ul{
+            li{
+                padding: 5px 0;
+            }
         }
-
-        @include helper-breakpoint-media-min($xl) {
-            padding-top: rem(77);
-            padding-bottom: rem(77);
+        &__link {
+            font-size: rem(14);
+            line-height: 22px;
+            font-weight: 500;
+            color: $setting-color-white;
         }
-    }
-
-    &__logos {
-        @include helper-breakpoint-media-min($md) {
-            background-color: $setting-color-bg;
-            padding: 0.5rem 0 0;
-            box-shadow: 0 3px 3px 0 $setting-color-shadow-1, 0 18px 18px 0 $setting-color-shadow-1;
+        &__link:hover {
+            color: $setting-color-white;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.25);
         }
-
-        @include helper-breakpoint-media-min($lg) {
-            padding: rem(26) 0;
+        &__social{
+            max-width: 240px;
         }
-    }
-
-    &__navigation {
-        @include helper-breakpoint-media-min($md) {
-            padding-top: rem(35);
+        &__social-top{
+            font-size: 1.125rem;
+            font-weight: normal;
+            color: $setting-color-white;
+            margin: 12px 0 15px 0;
         }
-
-        @include helper-breakpoint-media-min($lg) {
-            padding-top: rem(54);
+        &__social-bottom{
+            color: #fff;
+            font-size: 0.875rem;
+            word-break: break-word;
+            span{
+                //font-weight: 600;
+            }
         }
-    }
-
-    &__contact-info {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        border-top: solid 1px $setting-color-white;
-
-        @include helper-breakpoint-media-min($md) {
-            border-top: 0;
+        &__links-img{
+            margin: 30px 0;
+            display: flex;
+            justify-content: space-between;
         }
-
-        @include helper-breakpoint-media-min($lg) {
-            display: block;
+        &__networks-li {
+            max-width: 25px;
         }
+        &__bottom {
+            margin: 0 60px;
+            border-top: 1px solid #4268c7;
 
-        &::after {
-            display: none;
-        }
-    }
-
-    &__contact-info-item {
-        @include helper-effect-transition(color);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: $setting-color-gray-5;
-        font-size: rem(14);
-        font-weight: fw(medium);
-        text-align: center;
-        width: calc(50% - #{rem(10)});
-        min-height: rem(70);
-        border: solid 1px $setting-color-gray-2;
-        border-radius: $setting-border-radius;
-
-        @include helper-breakpoint-media-min($lg) {
-            display: block;
-            width: 100%;
-            min-height: 0;
-            border: none;
-            font-size: rem(15);
-            text-align: left;
-        }
-
-        @include helper-breakpoint-media-min($xl) {
-            font-size: rem(18);
-            line-height: rem(23);
-        }
-    }
-
-    &__phone {
-        @include helper-breakpoint-media-min($lg) {
-            display: block;
-            margin-bottom: 1rem;
-            color: $setting-color-gray-4;
-        }
-
-        &:hover,
-        &:focus {
-            color: $setting-color-gray-3;
-        }
-    }
-
-    &__social-buttons {
-        margin-top: rem(31);
-        margin-bottom: rem(23);
-        flex-direction: column-reverse;
-
-        @include helper-breakpoint-media-min($md) {
-            margin-top: rem(42);
-            margin-bottom: rem(47);
+            display: flex;
             flex-direction: row;
+            justify-content: space-between;
+            a {
+                line-height: 32px;
+                font-size: rem(15);
+            }
         }
-    }
-
-    &__hint {
-        font-size: rem(13);
-        line-height: 1rem;
-        text-align: center;
-        color: $setting-color-gray-2;
-        letter-spacing: rem(0.54);
-        padding-bottom: rem(12);
-
-        @include helper-breakpoint-media-min($md) {
-            text-align: left;
+        @media (max-width: 660px) {
+            &__top {
+                flex-direction: column;
+                text-align: center;
+            }
+            &__social{
+                margin: 0 auto;
+            }
+            &__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
         }
-    }
 
-    &__thanks-certeo {
-        font-size: rem(13);
-        line-height: 1rem;
-        text-align: center;
-        color: $setting-color-gray-3;
-        letter-spacing: rem(0.54);
-
-        @include helper-breakpoint-media-min($md) {
-            text-align: left;
-        }
-    }
-
-    &__copyright {
-        background-color: $setting-color-blue-1;
-        text-align: center;
-        color: $setting-color-white;
     }
 }
+
+@include shop-ui-footer();

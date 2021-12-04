@@ -22,20 +22,7 @@
         {% if attributes.src is empty %}
             {% set modifiersForIcon = modifiers | merge(['logo']) %}
             <span class="{{ component.renderClass(config.name ~ '__image', modifiers) }}">
-                {% include atom('icon') with {
-                    class: 'is-hidden-lg-xxl',
-                    modifiers: modifiersForIcon,
-                    data: {
-                        name: 'logo-mobile'
-                    }
-                } only %}
-                {% include atom('icon') with {
-                    class: 'is-hidden-sm-md',
-                    modifiers: modifiersForIcon,
-                    data: {
-                        name: 'logo'
-                    }
-                } only %}
+                <img src="/assets/ShopUI/logo.png" alt="">
             </span>
         {% else %}
             <img {{component.renderAttributes(attributes)}} />

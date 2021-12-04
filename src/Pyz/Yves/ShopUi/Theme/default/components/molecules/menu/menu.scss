@@ -269,24 +269,26 @@
 
         &__link--lvl-0,
         &__text--lvl-0 {
+
             display: block;
             font-size: rem(17);
-            font-weight: fw(medium);
+            text-transform: uppercase;
+            font-weight: bold;
             letter-spacing: rem(0.2);
-            line-height: rem(52);
+            line-height: rem(32);
             color: $setting-color-gray-5;
 
             @include helper-breakpoint-media-min($xl) {
                 @include helper-effect-transition(color);
                 padding: 0;
                 font-weight: fw(regular);
-                line-height: rem(68);
-                color: $setting-color-gray-3;
+                line-height: rem(32);
+                color: $setting-color-gray-5;
                 letter-spacing: 0;
             }
 
             &:hover {
-                color: $setting-color-gray-4;
+                color: $setting-color-black;
             }
         }
 
