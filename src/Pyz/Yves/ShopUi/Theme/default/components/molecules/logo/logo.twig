@@ -22,7 +22,7 @@
         {% if attributes.src is empty %}
             {% set modifiersForIcon = modifiers | merge(['logo']) %}
             <span class="{{ component.renderClass(config.name ~ '__image', modifiers) }}">
-                <img src="/assets/ShopUI/logo.png" alt="">
+                <img src="/assets/static/images/shopui/logo.png" alt="">
             </span>
         {% else %}
             <img {{component.renderAttributes(attributes)}} />
